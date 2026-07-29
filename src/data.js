@@ -12,32 +12,28 @@ export const projects = [
     title: "ChatBot",
     description: "An AI-driven conversational interface built to streamline automated user inquiries.",
     tech: "Python / NLP",
-    link: "https://github.com/Chanulaw/ChatBot",
-    liveLink: "https://chatbot-chanulaw.vercel.app"
+    link: "https://github.com/Chanulaw/ChatBot"
   },
   {
     id: 3,
     title: "CineMax",
     description: "A high-end movie discovery platform focusing on refined UI/UX and cinematic aesthetics.",
     tech: "CSS / HTML / JS",
-    link: "https://github.com/Chanulaw/CineMax",
-    liveLink: "https://cinemax-chanulaw.vercel.app"
+    link: "https://github.com/Chanulaw/CineMax"
   },
   {
     id: 4,
     title: "AirlineTickets",
     description: "A robust backend system designed for managing high-concurrency flight bookings.",
     tech: "Java / Spring Boot",
-    link: "https://github.com/Chanulaw/AirlineTickets",
-    liveLink: "https://airlinetickets-chanulaw.vercel.app"
+    link: "https://github.com/Chanulaw/AirlineTickets"
   },
   {
     id: 5,
     title: "Visit-Sri-Lanka",
     description: "A tourism-focused application showcasing the heritage and beauty of Sri Lanka.",
     tech: "C / Web Fundamentals",
-    link: "https://github.com/Chanulaw/Visit-Sri-Lanka",
-    liveLink: "https://visit-sri-lanka.vercel.app"
+    link: "https://github.com/Chanulaw/Visit-Sri-Lanka"
   },
   {
     id: 6,
