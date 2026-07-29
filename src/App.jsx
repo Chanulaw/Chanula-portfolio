@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './Navbar';
-import myPhoto from './assets/me-full.png'; 
+import myPhoto from './assets/me-full.png';
 
 const projects = [
   { id: 1, title: "KunuLink", description: "A specialized waste management and logistics platform for efficient collection tracking.", tech: "JavaScript / Node.js", link: "https://github.com/Chanulaw/KunuLink" },
@@ -32,20 +32,20 @@ function App() {
   return (
     <div className="app-container">
       <Navbar />
-      
+
       {/* SECTION 1: HERO */}
       <section id="home" className="hero-section">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 1 }} 
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
           style={{ zIndex: 2, textAlign: 'center' }}
         >
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.8rem, 8vw, 6.5rem)', margin: 0, lineHeight: 1.1 }}>
             Chanula <br /> <span style={{ fontWeight: 700 }}>Wijayarathne</span>
           </h1>
           <p style={{ marginTop: '24px', letterSpacing: '4px', color: '#888', textTransform: 'uppercase', fontSize: 'clamp(0.7rem, 2vw, 0.75rem)' }}>
-            Software Engineering Student @ CINEC
+            Software Engineering Student at CINEC
           </p>
         </motion.div>
         <div className="hero-photo-wrapper">
@@ -64,7 +64,7 @@ function App() {
           </div>
           <div style={{ alignSelf: 'center' }}>
             <p style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', lineHeight: '1.8', color: '#BBB', fontWeight: 300 }}>
-              I am a Software Engineering student at **CINEC** with a passion for building scalable, high-impact systems. As the **Business Development Lead at AIESEC in CINEC**, I bridge technical execution with professional strategy.
+              I am a Software Engineering student at CINEC with a passion for building scalable, high-impact systems. As the Business Development vice president at AIESEC in CINEC, I bridge technical execution with professional strategy.
             </p>
             <div style={{ display: 'flex', gap: '30px', marginTop: '40px', flexWrap: 'wrap' }}>
               <div>
@@ -73,7 +73,7 @@ function App() {
               </div>
               <div>
                 <p style={{ fontSize: '0.7rem', color: '#666', letterSpacing: '2px', textTransform: 'uppercase' }}>Current Role</p>
-                <p style={{ marginTop: '8px', fontSize: '1rem' }}>AIESEC BD Lead @ CINEC</p>
+                <p style={{ marginTop: '8px', fontSize: '1rem' }}>AIESEC BD vice president at CINEC</p>
               </div>
             </div>
           </div>
@@ -144,10 +144,10 @@ function App() {
             <p style={{ letterSpacing: '4px', fontSize: '0.7rem', color: '#AAA', textTransform: 'uppercase', marginBottom: '20px' }}>Connect</p>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 400 }}>Get in Touch</h2>
             <p style={{ marginTop: '24px', color: '#666', maxWidth: '400px', lineHeight: '1.7' }}>
-              Currently based in **Thotagamuwa, Hikkaduwa**. Open to collaborations regarding software development and business strategy.
+              Currently based in Malabe,Sri Lanka. Open to collaborations regarding software development and business strategy.
             </p>
           </div>
-          
+
           <div className="grid-contact-links">
             <div>
               <p style={{ fontSize: '0.65rem', color: '#AAA', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Contact</p>
