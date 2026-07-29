@@ -30,43 +30,50 @@ function App() {
   };
 
   return (
-    <div style={{ width: '100vw', backgroundColor: '#FCFCFC', overflowX: 'hidden', color: '#1a1a1a' }}>
+    <div className="app-container">
       <Navbar />
       
       {/* SECTION 1: HERO */}
-      <section id="home" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} style={{ zIndex: 2, textAlign: 'center' }}>
-          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(3rem, 8vw, 6.5rem)', margin: 0, lineHeight: 1.1 }}>
+      <section id="home" className="hero-section">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 1 }} 
+          style={{ zIndex: 2, textAlign: 'center' }}
+        >
+          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.8rem, 8vw, 6.5rem)', margin: 0, lineHeight: 1.1 }}>
             Chanula <br /> <span style={{ fontWeight: 700 }}>Wijayarathne</span>
           </h1>
-          <p style={{ marginTop: '30px', letterSpacing: '6px', color: '#888', textTransform: 'uppercase', fontSize: '0.75rem' }}>
+          <p style={{ marginTop: '24px', letterSpacing: '4px', color: '#888', textTransform: 'uppercase', fontSize: 'clamp(0.7rem, 2vw, 0.75rem)' }}>
             Software Engineering Student @ CINEC
           </p>
         </motion.div>
-        <div style={{ position: 'absolute', right: '5%', bottom: 0, height: '70vh', zIndex: 1 }}>
-          <img src={myPhoto} style={{ height: '100%', opacity: 0.95, maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)' }} alt="Chanula" />
+        <div className="hero-photo-wrapper">
+          <img src={myPhoto} className="hero-photo" alt="Chanula" />
         </div>
       </section>
 
       {/* SECTION 2: ABOUT ME */}
-      <section id="about" style={{ padding: '160px 10%', backgroundColor: '#1a1a1a', color: '#FFF' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '80px' }}>
+      <section id="about" className="section-padding-dark">
+        <div className="grid-about">
           <div>
             <p style={{ letterSpacing: '4px', fontSize: '0.7rem', color: '#666', textTransform: 'uppercase', marginBottom: '20px' }}>Background / Profile</p>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '3.5rem', fontWeight: 400, lineHeight: 1.2 }}>Architect of <br /> Digital Impact</h2>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 400, lineHeight: 1.2 }}>
+              Architect of <br /> Digital Impact
+            </h2>
           </div>
           <div style={{ alignSelf: 'center' }}>
-            <p style={{ fontSize: '1.4rem', lineHeight: '1.8', color: '#BBB', fontWeight: 300 }}>
+            <p style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', lineHeight: '1.8', color: '#BBB', fontWeight: 300 }}>
               I am a Software Engineering student at **CINEC** with a passion for building scalable, high-impact systems. As the **Business Development Lead at AIESEC in CINEC**, I bridge technical execution with professional strategy.
             </p>
-            <div style={{ display: 'flex', gap: '40px', marginTop: '50px' }}>
+            <div style={{ display: 'flex', gap: '30px', marginTop: '40px', flexWrap: 'wrap' }}>
               <div>
                 <p style={{ fontSize: '0.7rem', color: '#666', letterSpacing: '2px', textTransform: 'uppercase' }}>Focus</p>
-                <p style={{ marginTop: '10px', fontSize: '1rem' }}>Web Systems & Security</p>
+                <p style={{ marginTop: '8px', fontSize: '1rem' }}>Web Systems & Security</p>
               </div>
               <div>
                 <p style={{ fontSize: '0.7rem', color: '#666', letterSpacing: '2px', textTransform: 'uppercase' }}>Current Role</p>
-                <p style={{ marginTop: '10px', fontSize: '1rem' }}>AIESEC BD Lead @ CINEC</p>
+                <p style={{ marginTop: '8px', fontSize: '1rem' }}>AIESEC BD Lead @ CINEC</p>
               </div>
             </div>
           </div>
@@ -74,33 +81,33 @@ function App() {
       </section>
 
       {/* SECTION 3: RECOGNITION */}
-      <section id="recognition" style={{ padding: '120px 10%', backgroundColor: '#F9F9F9', textAlign: 'center' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '60px', marginBottom: '40px' }}>
+      <section id="recognition" className="section-padding-alt" style={{ textAlign: 'center' }}>
+        <div className="recognition-header">
           <div onClick={() => toggleSection('awards')} style={{ cursor: 'pointer' }}>
             <p style={{ letterSpacing: '4px', fontSize: '0.65rem', color: '#AAA', textTransform: 'uppercase' }}>Distinction</p>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', borderBottom: activeSection === 'awards' ? '2px solid #1a1a1a' : '2px solid transparent' }}>Awards +</h2>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', borderBottom: activeSection === 'awards' ? '2px solid #1a1a1a' : '2px solid transparent' }}>Awards +</h2>
           </div>
           <div onClick={() => toggleSection('engagements')} style={{ cursor: 'pointer' }}>
             <p style={{ letterSpacing: '4px', fontSize: '0.65rem', color: '#AAA', textTransform: 'uppercase' }}>Professional</p>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', borderBottom: activeSection === 'engagements' ? '2px solid #1a1a1a' : '2px solid transparent' }}>Engagements +</h2>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', borderBottom: activeSection === 'engagements' ? '2px solid #1a1a1a' : '2px solid transparent' }}>Engagements +</h2>
           </div>
         </div>
         <AnimatePresence mode="wait">
           {activeSection === 'awards' && (
-            <motion.div key="awards" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} style={{ maxWidth: '700px', margin: '40px auto', textAlign: 'left', padding: '40px', backgroundColor: '#FFF', border: '1px solid #EEE' }}>
+            <motion.div key="awards" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} style={{ maxWidth: '700px', margin: '30px auto 0', textAlign: 'left', padding: '30px 24px', backgroundColor: '#FFF', border: '1px solid #EEE' }}>
               <span style={{ color: '#AAA', fontSize: '0.8rem' }}>{awardData.date}</span>
-              <h3 style={{ fontSize: '1.8rem', marginTop: '10px' }}>{awardData.title}</h3>
-              <p style={{ fontStyle: 'italic', color: '#666', fontSize: '1.1rem' }}>{awardData.standard}</p>
+              <h3 style={{ fontSize: 'clamp(1.3rem, 3vw, 1.8rem)', marginTop: '10px' }}>{awardData.title}</h3>
+              <p style={{ fontStyle: 'italic', color: '#666', fontSize: '1rem', marginTop: '5px' }}>{awardData.standard}</p>
             </motion.div>
           )}
           {activeSection === 'engagements' && (
-            <motion.div key="engagements" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} style={{ maxWidth: '800px', margin: '40px auto', textAlign: 'left' }}>
+            <motion.div key="engagements" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} style={{ maxWidth: '800px', margin: '30px auto 0', textAlign: 'left' }}>
               {engagements.map((item, i) => (
-                <div key={i} style={{ display: 'flex', padding: '30px 0', borderBottom: '1px solid #EEE' }}>
-                  <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', width: '120px', color: '#999' }}>{item.year}</span>
-                  <div style={{ paddingLeft: '40px' }}>
-                    <h4 style={{ fontSize: '1.6rem', fontWeight: 600 }}>{item.title}</h4>
-                    <p style={{ color: '#666', marginTop: '5px' }}>{item.detail}</p>
+                <div key={i} className="engagement-row">
+                  <span className="engagement-year" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', width: '120px', color: '#999' }}>{item.year}</span>
+                  <div className="engagement-content" style={{ paddingLeft: '40px' }}>
+                    <h4 style={{ fontSize: 'clamp(1.2rem, 3vw, 1.6rem)', fontWeight: 600 }}>{item.title}</h4>
+                    <p style={{ color: '#666', marginTop: '5px', lineHeight: '1.6' }}>{item.detail}</p>
                   </div>
                 </div>
               ))}
@@ -110,20 +117,20 @@ function App() {
       </section>
 
       {/* SECTION 4: PROJECTS */}
-      <section id="projects" style={{ padding: '160px 10%', backgroundColor: '#FFFFFF' }}>
-        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+      <section id="projects" className="section-padding">
+        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <p style={{ letterSpacing: '5px', fontSize: '0.7rem', color: '#AAA', textTransform: 'uppercase' }}>Selected Works</p>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '4rem' }}>Portfolio</h2>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>Portfolio</h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '50px' }}>
+        <div className="grid-projects">
           {projects.map((p, i) => (
-            <motion.div key={p.id} whileHover={{ y: -10 }} style={{ padding: '60px 40px', backgroundColor: '#FBFBFB', border: '1px solid #F2F2F2' }}>
+            <motion.div key={p.id} whileHover={{ y: -6 }} className="project-card">
               <span style={{ fontSize: '0.7rem', color: '#DDD' }}>0{i + 1} /</span>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.2rem', margin: '20px 0' }}>{p.title}</h3>
-              <p style={{ color: '#777', lineHeight: '1.7', marginBottom: '30px' }}>{p.description}</p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', margin: '16px 0' }}>{p.title}</h3>
+              <p style={{ color: '#777', lineHeight: '1.7', marginBottom: '24px', fontSize: '0.95rem' }}>{p.description}</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
                 <span style={{ fontSize: '0.7rem', color: '#999', textTransform: 'uppercase' }}>{p.tech}</span>
-                <a href={p.link} target="_blank" rel="noreferrer" style={{ fontWeight: 700, textDecoration: 'none', borderBottom: '2px solid #1a1a1a', paddingBottom: '5px', fontSize: '0.8rem' }}>VIEW REPO</a>
+                <a href={p.link} target="_blank" rel="noreferrer" style={{ fontWeight: 700, textDecoration: 'none', borderBottom: '2px solid #1a1a1a', paddingBottom: '3px', fontSize: '0.8rem' }}>VIEW REPO</a>
               </div>
             </motion.div>
           ))}
@@ -131,38 +138,38 @@ function App() {
       </section>
 
       {/* SECTION 5: CONTACT */}
-      <section id="contact" style={{ padding: '120px 10%', backgroundColor: '#F9F9F9' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
+      <section id="contact" className="section-padding-alt">
+        <div className="grid-contact">
           <div>
             <p style={{ letterSpacing: '4px', fontSize: '0.7rem', color: '#AAA', textTransform: 'uppercase', marginBottom: '20px' }}>Connect</p>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '3.5rem', fontWeight: 400 }}>Get in Touch</h2>
-            <p style={{ marginTop: '30px', color: '#666', maxWidth: '400px' }}>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 400 }}>Get in Touch</h2>
+            <p style={{ marginTop: '24px', color: '#666', maxWidth: '400px', lineHeight: '1.7' }}>
               Currently based in **Thotagamuwa, Hikkaduwa**. Open to collaborations regarding software development and business strategy.
             </p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
+          <div className="grid-contact-links">
             <div>
               <p style={{ fontSize: '0.65rem', color: '#AAA', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Contact</p>
-              <p style={{ fontSize: '1rem', marginBottom: '5px' }}>WhatsApp: 0762732827</p>
-              <a href="mailto:chanulawijayarathne@gmail.com" style={{ color: '#1a1a1a', textDecoration: 'none', borderBottom: '1px solid #CCC' }}>Email Me</a>
+              <p style={{ fontSize: '0.95rem', marginBottom: '8px' }}>WhatsApp: 0762732827</p>
+              <a href="mailto:chanulawijayarathne@gmail.com" style={{ color: '#1a1a1a', textDecoration: 'none', borderBottom: '1px solid #CCC', fontSize: '0.95rem' }}>Email Me</a>
             </div>
             <div>
               <p style={{ fontSize: '0.65rem', color: '#AAA', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Professional</p>
-              <a href="https://linkedin.com/in/chanula-wijayarathne" target="_blank" rel="noreferrer" style={{ display: 'block', color: '#1a1a1a', textDecoration: 'none', marginBottom: '5px' }}>LinkedIn</a>
-              <a href="https://facebook.com/chanula.wijayarathne" target="_blank" rel="noreferrer" style={{ display: 'block', color: '#1a1a1a', textDecoration: 'none' }}>Facebook</a>
+              <a href="https://linkedin.com/in/chanula-wijayarathne" target="_blank" rel="noreferrer" style={{ display: 'block', color: '#1a1a1a', textDecoration: 'none', marginBottom: '8px', fontSize: '0.95rem' }}>LinkedIn</a>
+              <a href="https://facebook.com/chanula.wijayarathne" target="_blank" rel="noreferrer" style={{ display: 'block', color: '#1a1a1a', textDecoration: 'none', fontSize: '0.95rem' }}>Facebook</a>
             </div>
             <div>
               <p style={{ fontSize: '0.65rem', color: '#AAA', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Social</p>
-              <a href="https://instagram.com/chanuu.w" target="_blank" rel="noreferrer" style={{ color: '#1a1a1a', textDecoration: 'none' }}>Instagram</a>
+              <a href="https://instagram.com/chanuu.w" target="_blank" rel="noreferrer" style={{ color: '#1a1a1a', textDecoration: 'none', fontSize: '0.95rem' }}>Instagram</a>
             </div>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer style={{ padding: '80px 10%', textAlign: 'center', backgroundColor: '#1a1a1a', color: '#444' }}>
-        <p style={{ letterSpacing: '4px', fontSize: '0.65rem', textTransform: 'uppercase' }}>
+      <footer style={{ padding: '60px 5%', textAlign: 'center', backgroundColor: '#1a1a1a', color: '#777' }}>
+        <p style={{ letterSpacing: '3px', fontSize: '0.65rem', textTransform: 'uppercase' }}>
           Chanula Wijayarathne © 2026 | Architect of Impact
         </p>
       </footer>

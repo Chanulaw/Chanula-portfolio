@@ -19,6 +19,7 @@ body {
   color: #1a1a1a;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* Custom selection color for a premium feel */
@@ -27,11 +28,196 @@ body {
   color: #fff;
 }
 
+/* Main Container */
+.app-container {
+  width: 100%;
+  max-width: 100%;
+  background-color: #FCFCFC;
+  overflow-x: hidden;
+  color: #1a1a1a;
+}
+
+/* Responsive Navigation */
 @media (max-width: 768px) {
   .desktop-nav {
     display: none !important;
   }
   .mobile-menu-btn {
     display: block !important;
+  }
+}
+
+/* Hero Section Responsiveness */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 100px 5% 40px;
+}
+
+.hero-photo-wrapper {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  height: 70vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-photo {
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  opacity: 0.95;
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 120px;
+    padding-bottom: 0;
+    min-height: 100vh;
+  }
+  .hero-photo-wrapper {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    height: 45vh;
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-photo {
+    height: 100%;
+    max-height: 45vh;
+  }
+}
+
+/* Section Paddings */
+.section-padding {
+  padding: 140px 10%;
+}
+.section-padding-dark {
+  padding: 140px 10%;
+  background-color: #1a1a1a;
+  color: #FFF;
+}
+.section-padding-alt {
+  padding: 120px 10%;
+  background-color: #F9F9F9;
+}
+
+@media (max-width: 992px) {
+  .section-padding, .section-padding-dark, .section-padding-alt {
+    padding: 100px 6%;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-padding, .section-padding-dark, .section-padding-alt {
+    padding: 70px 5%;
+  }
+}
+
+/* Grids */
+.grid-about {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+}
+
+@media (max-width: 900px) {
+  .grid-about {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.grid-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+@media (max-width: 480px) {
+  .grid-projects {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+.grid-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.grid-contact-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .grid-contact {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-contact-links {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* Recognition Section Layout */
+.recognition-header {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.engagement-row {
+  display: flex;
+  padding: 30px 0;
+  border-bottom: 1px solid #EEE;
+}
+
+@media (max-width: 600px) {
+  .recognition-header {
+    gap: 30px;
+  }
+  .engagement-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .engagement-year {
+    width: 100% !important;
+  }
+  .engagement-content {
+    padding-left: 0 !important;
+  }
+}
+
+/* Card Paddings for Mobile */
+.project-card {
+  padding: 50px 35px;
+  background-color: #FBFBFB;
+  border: 1px solid #F2F2F2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    padding: 30px 20px;
   }
 }

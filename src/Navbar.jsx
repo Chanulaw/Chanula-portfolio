@@ -59,15 +59,15 @@ export default function Navbar() {
           left: 0,
           width: '100%',
           zIndex: 1000,
-          padding: scrolled ? '16px 8%' : '24px 8%',
-          backgroundColor: scrolled ? 'rgba(252, 252, 252, 0.88)' : 'rgba(252, 252, 252, 0.4)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
+          padding: scrolled ? '14px 6%' : '20px 6%',
+          backgroundColor: scrolled ? 'rgba(252, 252, 252, 0.92)' : 'rgba(252, 252, 252, 0.5)',
+          backdropFilter: 'blur(14px)',
+          WebkitBackdropFilter: 'blur(14px)',
           borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : '1px solid transparent',
           boxShadow: scrolled ? '0 10px 30px -10px rgba(0,0,0,0.05)' : 'none',
           transition: 'all 0.4s ease',
           display: 'flex',
-          justify: 'space-between',
+          justifyContent: 'space-between',
           alignItems: 'center',
           boxSizing: 'border-box'
         }}
@@ -157,24 +157,24 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.2 }}
             style={{
               position: 'fixed',
-              top: '70px',
+              top: '64px',
               left: 0,
               width: '100%',
               backgroundColor: 'rgba(252, 252, 252, 0.98)',
               backdropFilter: 'blur(16px)',
               borderBottom: '1px solid rgba(0,0,0,0.08)',
               zIndex: 999,
-              padding: '24px 8%',
+              padding: '24px 6%',
               boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
             }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.substring(1);
                 return (
@@ -183,14 +183,14 @@ export default function Navbar() {
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
                     style={{
-                      fontSize: '1rem',
-                      letterSpacing: '3px',
+                      fontSize: '0.95rem',
+                      letterSpacing: '2.5px',
                       textTransform: 'uppercase',
                       fontWeight: isActive ? 600 : 400,
                       color: isActive ? '#1a1a1a' : '#666',
                       textDecoration: 'none',
-                      padding: '8px 0',
-                      borderBottom: '1px solid rgba(0,0,0,0.04)'
+                      padding: '10px 0',
+                      borderBottom: '1px solid rgba(0,0,0,0.05)'
                     }}
                   >
                     {link.name}
