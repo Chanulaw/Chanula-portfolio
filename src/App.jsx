@@ -19,8 +19,8 @@ const awardData = {
 };
 
 const engagements = [
-  { year: "2024", title: "Richmond Live", detail: "Strategic media production and digital event coordination for Richmond College." },
-  { year: "2023 - Present", title: "AIESEC in CINEC", detail: "Business Development Lead focusing on corporate partnerships and high-impact growth." }
+  { year: "2019-Present", title: "Richmond Live", detail: "Strategic media production and digital event coordination for Richmond College." },
+  { year: "2026- Present", title: "AIESEC in CINEC", detail: "Business Development vice president focusing on corporate partnerships and high-impact growth." }
 ];
 
 function App() {
