@@ -5,7 +5,7 @@ export const projects = [
     description: "A specialized waste management and logistics platform for efficient collection tracking.",
     tech: "JavaScript / Node.js",
     link: "https://github.com/Chanulaw/KunuLink",
-    liveLink: "https://kunulink.vercel.app"
+    liveLink: "https://kunu-link-rust.vercel.app/"
   },
   {
     id: 2,
@@ -45,6 +45,6 @@ export const projects = [
     description: "An open web application platform built with custom HTML and modular web styling.",
     tech: "HTML / Web",
     link: "https://github.com/Chanulaw/OcpApplication",
-    liveLink: "https://ocpapplication.vercel.app"
+    liveLink: "https://ocp-application.vercel.app/"
   }
 ];

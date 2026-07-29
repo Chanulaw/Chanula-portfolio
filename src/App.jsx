@@ -36,22 +36,67 @@ function App() {
 
       {/* SECTION 1: HERO */}
       <section id="home" className="hero-section">
+        {/* Background Watermark Text */}
+        <div className="hero-watermark">CREATIVE</div>
+
+        {/* Hero Left Content */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          style={{ zIndex: 2, textAlign: 'center' }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="hero-content"
         >
-          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.8rem, 8vw, 6.5rem)', margin: 0, lineHeight: 1.1 }}>
-            Chanula <br /> <span style={{ fontWeight: 700 }}>Wijayarathne</span>
+          <div className="hero-badge">
+            <span className="dot-active"></span>
+            <span>Available for Opportunities</span>
+          </div>
+
+          <h1 className="hero-title">
+            Chanula <br />
+            <span className="hero-title-accent">Wijayarathne</span>
           </h1>
-          <p style={{ marginTop: '24px', letterSpacing: '4px', color: '#888', textTransform: 'uppercase', fontSize: 'clamp(0.7rem, 2vw, 0.75rem)' }}>
-            Software Engineering Student at CINEC
+
+          <p className="hero-subtitle">
+            Software Engineering Student @ CINEC <br />
+            Business Development VP @ AIESEC
           </p>
+
+          <div className="hero-cta-group">
+            <a href="#projects" className="btn-primary">
+              View Projects ↓
+            </a>
+            <a href="#contact" className="btn-secondary">
+              Get In Touch ✉
+            </a>
+          </div>
         </motion.div>
-        <div className="hero-photo-wrapper">
-          <img src={myPhoto} className="hero-photo" alt="Chanula" />
-        </div>
+
+        {/* Hero Right Photo & Interactive Badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          className="hero-photo-wrapper"
+        >
+          <div className="hero-photo-container">
+            {/* Floating Highlight Cards */}
+            <div className="hero-floating-card hero-floating-card-1">
+              <span>💻</span> Web & Backend Engineering
+            </div>
+
+            <div className="hero-floating-card hero-floating-card-2">
+              <span>🚀</span> AIESEC BD VP @ CINEC
+            </div>
+
+            <img src={myPhoto} className="hero-photo" alt="Chanula Wijayarathne" />
+          </div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <a href="#about" className="hero-scroll-indicator">
+          <span>SCROLL</span>
+          <span style={{ fontSize: '0.9rem' }}>↓</span>
+        </a>
       </section>
 
       {/* SECTION 2: ABOUT ME */}
