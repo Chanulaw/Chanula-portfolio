@@ -4,12 +4,12 @@ import Navbar from './Navbar';
 import myPhoto from './assets/me-full.png';
 
 const projects = [
-  { id: 1, title: "KunuLink", description: "A specialized waste management and logistics platform for efficient collection tracking.", tech: "JavaScript / Node.js", link: "https://github.com/Chanulaw/KunuLink" },
-  { id: 2, title: "ChatBot", description: "An AI-driven conversational interface built to streamline automated user inquiries.", tech: "Python / NLP", link: "https://github.com/Chanulaw/ChatBot" },
-  { id: 3, title: "CineMax", description: "A high-end movie discovery platform focusing on refined UI/UX and cinematic aesthetics.", tech: "CSS / HTML / JS", link: "https://github.com/Chanulaw/CineMax" },
-  { id: 4, title: "AirlineTickets", description: "A robust backend system designed for managing high-concurrency flight bookings.", tech: "Java / Spring Boot", link: "https://github.com/Chanulaw/AirlineTickets" },
-  { id: 5, title: "Visit-Sri-Lanka", description: "A tourism-focused application showcasing the heritage and beauty of Sri Lanka.", tech: "C / Web Fundamentals", link: "https://github.com/Chanulaw/Visit-Sri-Lanka" },
-  { id: 6, title: "OcpApplication", description: "An open web application platform built with custom HTML and modular web styling.", tech: "HTML / Web", link: "https://github.com/Chanulaw/OcpApplication" }
+  { id: 1, title: "KunuLink", description: "A specialized waste management and logistics platform for efficient collection tracking.", tech: "JavaScript / Node.js", link: "https://github.com/Chanulaw/KunuLink", liveLink: "https://kunulink.vercel.app" },
+  { id: 2, title: "ChatBot", description: "An AI-driven conversational interface built to streamline automated user inquiries.", tech: "Python / NLP", link: "https://github.com/Chanulaw/ChatBot", liveLink: "https://chatbot-chanulaw.vercel.app" },
+  { id: 3, title: "CineMax", description: "A high-end movie discovery platform focusing on refined UI/UX and cinematic aesthetics.", tech: "CSS / HTML / JS", link: "https://github.com/Chanulaw/CineMax", liveLink: "https://cinemax-chanulaw.vercel.app" },
+  { id: 4, title: "AirlineTickets", description: "A robust backend system designed for managing high-concurrency flight bookings.", tech: "Java / Spring Boot", link: "https://github.com/Chanulaw/AirlineTickets", liveLink: "https://airlinetickets-chanulaw.vercel.app" },
+  { id: 5, title: "Visit-Sri-Lanka", description: "A tourism-focused application showcasing the heritage and beauty of Sri Lanka.", tech: "C / Web Fundamentals", link: "https://github.com/Chanulaw/Visit-Sri-Lanka", liveLink: "https://visit-sri-lanka.vercel.app" },
+  { id: 6, title: "OcpApplication", description: "An open web application platform built with custom HTML and modular web styling.", tech: "HTML / Web", link: "https://github.com/Chanulaw/OcpApplication", liveLink: "https://ocpapplication.vercel.app" }
 ];
 
 const awardData = {
@@ -129,9 +129,14 @@ function App() {
               <span style={{ fontSize: '0.7rem', color: '#DDD' }}>0{i + 1} /</span>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', margin: '16px 0' }}>{p.title}</h3>
               <p style={{ color: '#777', lineHeight: '1.7', marginBottom: '24px', fontSize: '0.95rem' }}>{p.description}</p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginTop: '16px' }}>
                 <span style={{ fontSize: '0.7rem', color: '#999', textTransform: 'uppercase' }}>{p.tech}</span>
-                <a href={p.link} target="_blank" rel="noreferrer" style={{ fontWeight: 700, textDecoration: 'none', borderBottom: '2px solid #1a1a1a', paddingBottom: '3px', fontSize: '0.8rem' }}>VIEW REPO</a>
+                <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+                  {p.liveLink && (
+                    <a href={p.liveLink} target="_blank" rel="noreferrer" style={{ fontWeight: 700, textDecoration: 'none', borderBottom: '2px solid #1a1a1a', paddingBottom: '3px', fontSize: '0.8rem', color: '#1a1a1a' }}>LIVE DEMO ↗</a>
+                  )}
+                  <a href={p.link} target="_blank" rel="noreferrer" style={{ fontWeight: 700, textDecoration: 'none', borderBottom: '2px solid #666', paddingBottom: '3px', fontSize: '0.8rem', color: '#666' }}>VIEW REPO</a>
+                </div>
               </div>
             </motion.div>
           ))}
