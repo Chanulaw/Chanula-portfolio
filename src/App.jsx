@@ -23,6 +23,11 @@ const engagements = [
   { year: "2026- Present", title: "AIESEC in CINEC", detail: "Business Development vice president focusing on corporate partnerships and high-impact growth." }
 ];
 
+const skills = [
+  "JavaScript (ES6+)", "React.js", "Node.js", "Java", "Spring Boot",
+  "Python", "HTML/CSS", "UI/UX Design", "C/C++", "SQL", "Git"
+];
+
 function App() {
   const [activeSection, setActiveSection] = useState(null);
 
@@ -120,6 +125,26 @@ function App() {
               <div>
                 <p style={{ fontSize: '0.7rem', color: '#666', letterSpacing: '2px', textTransform: 'uppercase' }}>Current Role</p>
                 <p style={{ marginTop: '8px', fontSize: '1rem' }}>AIESEC BD vice president at CINEC</p>
+              </div>
+            </div>
+
+            {/* Skills Section */}
+            <div style={{ marginTop: '40px' }}>
+              <p style={{ fontSize: '0.7rem', color: '#666', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>Core Expertise</p>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                {skills.map((skill, index) => (
+                  <span key={index} style={{
+                    padding: '8px 16px',
+                    backgroundColor: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    borderRadius: '20px',
+                    fontSize: '0.85rem',
+                    color: '#DDD',
+                    letterSpacing: '1px'
+                  }}>
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
