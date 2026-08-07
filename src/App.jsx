@@ -104,7 +104,7 @@ function App() {
         <div className="grid-about">
           <div>
             <p style={{ letterSpacing: '4px', fontSize: '0.7rem', color: '#666', textTransform: 'uppercase', marginBottom: '20px' }}>Background / Profile</p>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 400, lineHeight: 1.2 }}>
+            <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, lineHeight: 1.2 }}>
               Architect of <br /> Digital Impact
             </h2>
           </div>
@@ -131,11 +131,11 @@ function App() {
         <div className="recognition-header">
           <div onClick={() => toggleSection('awards')} style={{ cursor: 'pointer' }}>
             <p style={{ letterSpacing: '4px', fontSize: '0.65rem', color: '#AAA', textTransform: 'uppercase' }}>Distinction</p>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', borderBottom: activeSection === 'awards' ? '2px solid #1a1a1a' : '2px solid transparent' }}>Awards +</h2>
+            <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 600, borderBottom: activeSection === 'awards' ? '2px solid #1a1a1a' : '2px solid transparent' }}>Awards +</h2>
           </div>
           <div onClick={() => toggleSection('engagements')} style={{ cursor: 'pointer' }}>
             <p style={{ letterSpacing: '4px', fontSize: '0.65rem', color: '#AAA', textTransform: 'uppercase' }}>Professional</p>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', borderBottom: activeSection === 'engagements' ? '2px solid #1a1a1a' : '2px solid transparent' }}>Engagements +</h2>
+            <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 600, borderBottom: activeSection === 'engagements' ? '2px solid #1a1a1a' : '2px solid transparent' }}>Engagements +</h2>
           </div>
         </div>
         <AnimatePresence mode="wait">
@@ -150,7 +150,7 @@ function App() {
             <motion.div key="engagements" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} style={{ maxWidth: '800px', margin: '30px auto 0', textAlign: 'left' }}>
               {engagements.map((item, i) => (
                 <div key={i} className="engagement-row">
-                  <span className="engagement-year" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', width: '120px', color: '#999' }}>{item.year}</span>
+                  <span className="engagement-year" style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '1.2rem', width: '120px', color: '#999' }}>{item.year}</span>
                   <div className="engagement-content" style={{ paddingLeft: '40px' }}>
                     <h4 style={{ fontSize: 'clamp(1.2rem, 3vw, 1.6rem)', fontWeight: 600 }}>{item.title}</h4>
                     <p style={{ color: '#666', marginTop: '5px', lineHeight: '1.6' }}>{item.detail}</p>
@@ -166,13 +166,13 @@ function App() {
       <section id="projects" className="section-padding">
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <p style={{ letterSpacing: '5px', fontSize: '0.7rem', color: '#AAA', textTransform: 'uppercase' }}>Selected Works</p>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>Portfolio</h2>
+          <h2 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>Portfolio</h2>
         </div>
         <div className="grid-projects">
           {projects.map((p, i) => (
             <motion.div key={p.id} whileHover={{ y: -6 }} className="project-card">
               <span style={{ fontSize: '0.7rem', color: '#DDD' }}>0{i + 1} /</span>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', margin: '16px 0' }}>{p.title}</h3>
+              <h3 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', margin: '16px 0' }}>{p.title}</h3>
               <p style={{ color: '#777', lineHeight: '1.7', marginBottom: '24px', fontSize: '0.95rem' }}>{p.description}</p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginTop: '16px' }}>
                 <span style={{ fontSize: '0.7rem', color: '#999', textTransform: 'uppercase' }}>{p.tech}</span>
@@ -193,7 +193,7 @@ function App() {
         <div className="grid-contact">
           <div>
             <p style={{ letterSpacing: '4px', fontSize: '0.7rem', color: '#AAA', textTransform: 'uppercase', marginBottom: '20px' }}>Connect</p>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 400 }}>Get in Touch</h2>
+            <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600 }}>Get in Touch</h2>
             <p style={{ marginTop: '24px', color: '#666', maxWidth: '400px', lineHeight: '1.7' }}>
               Currently based in Malabe,Sri Lanka. Open to collaborations regarding software development and business strategy.
             </p>
