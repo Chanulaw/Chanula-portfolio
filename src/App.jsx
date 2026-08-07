@@ -24,8 +24,18 @@ const engagements = [
 ];
 
 const skills = [
-  "JavaScript (ES6+)", "React.js", "Node.js", "Java", "Spring Boot",
-  "Python", "HTML/CSS", "UI/UX Design", "C/C++", "SQL", "Git"
+  { name: "JavaScript", icon: "https://skillicons.dev/icons?i=js" },
+  { name: "React", icon: "https://skillicons.dev/icons?i=react" },
+  { name: "Node.js", icon: "https://skillicons.dev/icons?i=nodejs" },
+  { name: "Java", icon: "https://skillicons.dev/icons?i=java" },
+  { name: "Spring Boot", icon: "https://skillicons.dev/icons?i=spring" },
+  { name: "Python", icon: "https://skillicons.dev/icons?i=python" },
+  { name: "HTML5", icon: "https://skillicons.dev/icons?i=html" },
+  { name: "CSS3", icon: "https://skillicons.dev/icons?i=css" },
+  { name: "Figma", icon: "https://skillicons.dev/icons?i=figma" },
+  { name: "C++", icon: "https://skillicons.dev/icons?i=cpp" },
+  { name: "MySQL", icon: "https://skillicons.dev/icons?i=mysql" },
+  { name: "Git", icon: "https://skillicons.dev/icons?i=git" }
 ];
 
 function App() {
@@ -92,7 +102,7 @@ function App() {
 
       {/* SECTION 2: ABOUT ME */}
       <section id="about" className="section-padding-dark">
-        <div className="grid-about">
+        <motion.div className="grid-about" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6 }}>
           <div>
             <p style={{ letterSpacing: '4px', fontSize: '0.7rem', color: '#666', textTransform: 'uppercase', marginBottom: '20px' }}>Background / Profile</p>
             <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, lineHeight: 1.2 }}>
@@ -114,32 +124,14 @@ function App() {
               </div>
             </div>
 
-            {/* Skills Section */}
-            <div style={{ marginTop: '40px' }}>
-              <p style={{ fontSize: '0.7rem', color: '#666', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>Core Expertise</p>
-              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                {skills.map((skill, index) => (
-                  <span key={index} style={{
-                    padding: '8px 16px',
-                    backgroundColor: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    borderRadius: '20px',
-                    fontSize: '0.85rem',
-                    color: '#DDD',
-                    letterSpacing: '1px'
-                  }}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* SECTION 3: RECOGNITION */}
       <section id="recognition" className="section-padding-alt" style={{ textAlign: 'center' }}>
-        <div className="recognition-header">
+        <motion.div className="recognition-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6 }}>
           <div onClick={() => toggleSection('awards')} style={{ cursor: 'pointer' }}>
             <p style={{ letterSpacing: '4px', fontSize: '0.65rem', color: '#AAA', textTransform: 'uppercase' }}>Distinction</p>
             <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 600, borderBottom: activeSection === 'awards' ? '2px solid #1a1a1a' : '2px solid transparent' }}>Awards +</h2>
@@ -148,7 +140,7 @@ function App() {
             <p style={{ letterSpacing: '4px', fontSize: '0.65rem', color: '#AAA', textTransform: 'uppercase' }}>Professional</p>
             <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 600, borderBottom: activeSection === 'engagements' ? '2px solid #1a1a1a' : '2px solid transparent' }}>Engagements +</h2>
           </div>
-        </div>
+        </motion.div>
         <AnimatePresence mode="wait">
           {activeSection === 'awards' && (
             <motion.div key="awards" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} style={{ maxWidth: '700px', margin: '30px auto 0', textAlign: 'left', padding: '30px 24px', backgroundColor: '#FFF', border: '1px solid #EEE' }}>
@@ -175,33 +167,48 @@ function App() {
 
       {/* SECTION 4: PROJECTS */}
       <section id="projects" className="section-padding">
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6 }} style={{ textAlign: 'center', marginBottom: '60px' }}>
           <p style={{ letterSpacing: '5px', fontSize: '0.7rem', color: '#AAA', textTransform: 'uppercase' }}>Selected Works</p>
           <h2 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>Portfolio</h2>
-        </div>
+        </motion.div>
         <div className="grid-projects">
-          {projects.map((p, i) => (
-            <motion.div key={p.id} whileHover={{ y: -6 }} className="project-card">
-              <span style={{ fontSize: '0.7rem', color: '#DDD' }}>0{i + 1} /</span>
-              <h3 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', margin: '16px 0' }}>{p.title}</h3>
-              <p style={{ color: '#777', lineHeight: '1.7', marginBottom: '24px', fontSize: '0.95rem' }}>{p.description}</p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginTop: '16px' }}>
-                <span style={{ fontSize: '0.7rem', color: '#999', textTransform: 'uppercase' }}>{p.tech}</span>
-                <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
-                  {p.liveLink && (
-                    <a href={p.liveLink} target="_blank" rel="noreferrer" style={{ fontWeight: 700, textDecoration: 'none', borderBottom: '2px solid #1a1a1a', paddingBottom: '3px', fontSize: '0.8rem', color: '#1a1a1a' }}>LIVE DEMO ↗</a>
-                  )}
-                  <a href={p.link} target="_blank" rel="noreferrer" style={{ fontWeight: 700, textDecoration: 'none', borderBottom: '2px solid #666', paddingBottom: '3px', fontSize: '0.8rem', color: '#666' }}>VIEW REPO</a>
+          {projects.map((p, i) => {
+            const gradientBg = `linear-gradient(135deg, hsl(${i * 45}, 70%, 90%), hsl(${i * 45 + 30}, 70%, 95%))`;
+            return (
+              <motion.div key={p.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, delay: (i % 3) * 0.1 }} whileHover={{ y: -6 }} className="project-card">
+                <div className="project-media" style={{ background: gradientBg }}></div>
+                <span style={{ fontSize: '0.7rem', color: '#DDD' }}>0{i + 1} /</span>
+                <h3 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', margin: '16px 0' }}>{p.title}</h3>
+                <p style={{ color: '#777', lineHeight: '1.7', marginBottom: '24px', fontSize: '0.95rem', flexGrow: 1 }}>{p.description}</p>
+                <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+                  <span style={{ fontSize: '0.7rem', color: '#999', textTransform: 'uppercase' }}>{p.tech}</span>
+                  <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+                    {p.liveLink && (
+                      <a href={p.liveLink} target="_blank" rel="noreferrer" style={{ fontWeight: 700, textDecoration: 'none', borderBottom: '2px solid #1a1a1a', paddingBottom: '3px', fontSize: '0.8rem', color: '#1a1a1a' }}>LIVE DEMO ↗</a>
+                    )}
+                    <a href={p.link} target="_blank" rel="noreferrer" style={{ fontWeight: 700, textDecoration: 'none', borderBottom: '2px solid #666', paddingBottom: '3px', fontSize: '0.8rem', color: '#666' }}>VIEW REPO</a>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
+      {/* Full-width Running Skills Bar (Now under Projects) */}
+      <div className="skills-marquee">
+         <div className="skills-track">
+           {[...skills, ...skills, ...skills, ...skills].map((skill, index) => (
+              <div key={index} className="skill-badge" title={skill.name}>
+                <img src={skill.icon} alt={skill.name} />
+              </div>
+           ))}
+         </div>
+      </div>
+
       {/* SECTION 5: CONTACT */}
       <section id="contact" className="section-padding-alt">
-        <div className="grid-contact">
+        <motion.div className="grid-contact" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6 }}>
           <div>
             <p style={{ letterSpacing: '4px', fontSize: '0.7rem', color: '#AAA', textTransform: 'uppercase', marginBottom: '20px' }}>Connect</p>
             <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600 }}>Get in Touch</h2>
@@ -227,7 +234,7 @@ function App() {
               <a href="https://instagram.com/chanuu.w" target="_blank" rel="noreferrer" style={{ color: '#1a1a1a', textDecoration: 'none', fontSize: '0.95rem' }}>Instagram</a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* FOOTER */}

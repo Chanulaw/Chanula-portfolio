@@ -392,7 +392,7 @@ body {
 /* Grids */
 .grid-about {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr;
   gap: 80px;
 }
 
@@ -403,10 +403,67 @@ body {
   }
 }
 
+/* Skills Marquee */
+.skills-marquee {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.skills-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.skills-track:hover {
+  animation-play-state: paused;
+}
+
+.skill-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-badge img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+}
+
+.skill-badge:hover img {
+  transform: scale(1.15) translateY(-5px);
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 10px)); }
+}
+
+/* Projects Section */
 .grid-projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
+}
+
+.project-media {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  height: 220px;
 }
 
 @media (max-width: 480px) {
@@ -477,6 +534,8 @@ body {
 
 /* Card Paddings for Mobile */
 .project-card {
+  display: flex;
+  flex-direction: column;
   padding: 50px 35px;
   background-color: #FBFBFB;
   border: 1px solid #F2F2F2;
