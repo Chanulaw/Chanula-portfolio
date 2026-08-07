@@ -51,11 +51,6 @@ function App() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="hero-content"
         >
-          <div className="hero-badge">
-            <span className="dot-active"></span>
-            <span>Available for Opportunities</span>
-          </div>
-
           <h1 className="hero-title">
             Chanula <br />
             <span className="hero-title-accent">Wijayarathne</span>
@@ -84,15 +79,6 @@ function App() {
           className="hero-photo-wrapper"
         >
           <div className="hero-photo-container">
-            {/* Floating Highlight Cards */}
-            <div className="hero-floating-card hero-floating-card-1">
-              <span>💻</span> Web & Backend Engineering
-            </div>
-
-            <div className="hero-floating-card hero-floating-card-2">
-              <span>🚀</span> AIESEC BD VP @ CINEC
-            </div>
-
             <img src={myPhoto} className="hero-photo" alt="Chanula Wijayarathne" />
           </div>
         </motion.div>

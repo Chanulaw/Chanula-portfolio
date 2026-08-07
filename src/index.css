@@ -57,7 +57,21 @@ body {
   position: relative;
   padding: 120px 8% 60px;
   overflow: hidden;
-  background: radial-gradient(circle at 75% 45%, rgba(0, 0, 0, 0.025) 0%, transparent 60%);
+  background: linear-gradient(-45deg, #FCFCFC, #F3F3F3, #EAEAEA, #F8F8F8);
+  background-size: 400% 400%;
+  animation: bgMove 15s ease infinite;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .hero-watermark {
