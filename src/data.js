@@ -1,3 +1,8 @@
+import noveraImage from './assets/novera.png';
+import kalanaFiberMillsImage from './assets/kalana-fiber-mills.png';
+import kunulinkImage from './assets/kunulink.png';
+import ocpApplicationImage from './assets/ocp-application.png';
+
 export const projects = [
   {
     id: 9,
@@ -5,7 +10,8 @@ export const projects = [
     description: "A website for Novera, an event organized by AIESEC in CINEC.",
     tech: "HTML",
     link: "https://github.com/Chanulaw/Novera",
-    liveLink: "https://novera-taupe.vercel.app/"
+    liveLink: "https://novera-taupe.vercel.app/",
+    image: noveraImage
   },
   {
     id: 10,
@@ -34,7 +40,8 @@ export const projects = [
     description: "A corporate website showcasing a Sri Lankan fiber mill and its coir products.",
     tech: "HTML / CSS / JavaScript",
     link: "https://github.com/Chanulaw/Kalana-Fiber-Mills",
-    liveLink: "https://kalana-fiber-mills.vercel.app/"
+    liveLink: "https://kalana-fiber-mills.vercel.app/",
+    image: kalanaFiberMillsImage
   },
   {
     id: 1,
@@ -42,7 +49,8 @@ export const projects = [
     description: "A specialized waste management and logistics platform for efficient collection tracking.",
     tech: "JavaScript / Node.js",
     link: "https://github.com/Chanulaw/KunuLink",
-    liveLink: "https://kunu-link-rust.vercel.app/"
+    liveLink: "https://kunu-link-rust.vercel.app/",
+    image: kunulinkImage
   },
   {
     id: 2,
@@ -78,6 +86,7 @@ export const projects = [
     description: "An open web application platform built with custom HTML and modular web styling.",
     tech: "HTML / Web",
     link: "https://github.com/Chanulaw/OcpApplication",
-    liveLink: "https://ocp-application.vercel.app/"
+    liveLink: "https://ocp-application.vercel.app/",
+    image: ocpApplicationImage
   }
 ];

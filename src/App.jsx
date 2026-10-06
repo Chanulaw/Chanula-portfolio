@@ -168,7 +168,9 @@ function App() {
             const gradientBg = `linear-gradient(135deg, hsl(${i * 45}, 70%, 90%), hsl(${i * 45 + 30}, 70%, 95%))`;
             return (
               <motion.div key={p.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, delay: (i % 3) * 0.1 }} whileHover={{ y: -6 }} className="project-card">
-                <div className="project-media" style={{ background: gradientBg }}></div>
+                <div className="project-media" style={{ background: p.image ? '#0a0a0a' : gradientBg }}>
+                  {p.image && <img src={p.image} alt={`${p.title} project preview`} />}
+                </div>
                 <span style={{ fontSize: '0.7rem', color: '#DDD' }}>0{i + 1} /</span>
                 <h3 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', margin: '16px 0' }}>{p.title}</h3>
                 <p style={{ color: '#777', lineHeight: '1.7', marginBottom: '24px', fontSize: '0.95rem', flexGrow: 1 }}>{p.description}</p>

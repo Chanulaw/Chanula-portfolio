@@ -466,6 +466,14 @@ body {
   height: 220px;
 }
 
+.project-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 @media (max-width: 480px) {
   .grid-projects {
     grid-template-columns: 1fr;
