@@ -1,5 +1,12 @@
 export const projects = [
   {
+    id: 7,
+    title: "Kalana Fiber Mills",
+    description: "A corporate website showcasing a Sri Lankan fiber mill and its coir products.",
+    tech: "HTML / CSS / JavaScript",
+    link: "https://github.com/Chanulaw/Kalana-Fiber-Mills"
+  },
+  {
     id: 1,
     title: "KunuLink",
     description: "A specialized waste management and logistics platform for efficient collection tracking.",
