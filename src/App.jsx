@@ -30,6 +30,54 @@ const skills = [
   { name: "Git", icon: "https://skillicons.dev/icons?i=git" }
 ];
 
+function WhatsAppIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12.04 2C6.58 2 2.13 6.44 2.13 11.9c0 1.74.46 3.42 1.34 4.91L2 22l5.36-1.42A9.9 9.9 0 0 0 12.04 21c5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm5.13 13.57c-.22.62-1.27 1.17-1.74 1.24-.46.07-1.04.1-3.34-.71-2.82-1.05-4.64-3.82-4.78-4-.14-.17-1.15-1.53-1.15-2.91 0-1.38.72-2.06 1-2.34.25-.27.56-.34.75-.34h.53c.18 0 .42.01.66.5.27.56.9 1.98.98 2.12.09.15.14.33.02.54-.12.2-.18.33-.36.52-.17.19-.35.43-.5.59-.17.17-.35.36-.15.7.2.35.9 1.48 1.93 2.39 1.33 1.18 2.45 1.55 2.8 1.72.35.17.56.15.76-.1.2-.24.87-1 .98-1.35.12-.34.25-.29.53-.17.28.12 1.77.84 2.08.99.31.16.52.23.6.36.08.12.08.67-.14 1.3Z" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function GitHubIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.8 1.4 3.5 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.4-5.5-6.1 0-1.3.5-2.5 1.2-3.4-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.9 1.2 2.1 1.2 3.4 0 4.7-2.8 5.8-5.5 6.1.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M6.94 8.2A1.75 1.75 0 1 1 6.94 4.7a1.75 1.75 0 0 1 0 3.5ZM5.5 9.8h2.9v9.7H5.5V9.8Zm4.58 0h2.77v1.33h.04c.39-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.43V19.5h-2.9v-18.2c0-1.4-.03-3.2-1.96-3.2-1.96 0-2.26 1.53-2.26 3.12v18.3H10.08V9.8Z" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M13.5 22v-8h2.7l.4-3.1h-3.1V7.4c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7v3.1h3.1v8h3.4Z" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M7.6 2.5h8.8A5.1 5.1 0 0 1 21.5 7.6v8.8A5.1 5.1 0 0 1 16.4 21.5H7.6A5.1 5.1 0 0 1 2.5 16.4V7.6A5.1 5.1 0 0 1 7.6 2.5Zm0 1.8A3.3 3.3 0 0 0 4.3 7.6v8.8a3.3 3.3 0 0 0 3.3 3.3h8.8a3.3 3.3 0 0 0 3.3-3.3V7.6a3.3 3.3 0 0 0-3.3-3.3H7.6Zm9.7 1.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.8a5.2 5.2 0 1 1 0 10.4 5.2 5.2 0 0 1 0-10.4Zm0 1.8A3.4 3.4 0 1 0 12 17.4a3.4 3.4 0 0 0 0-6.8Z" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5v-11Zm2.2-.2 6.8 5.7 6.8-5.7H5.2Zm14.3 1.7-7.2 5.9a1.2 1.2 0 0 1-1.4 0L4.5 8v9.5c0 .3.2.5.5.5h13c.3 0 .5-.2.5-.5V8Z" fill="currentColor"/>
+    </svg>
+  );
+}
+
 function App() {
   const [activeSection, setActiveSection] = useState(null);
 
@@ -213,19 +261,37 @@ function App() {
 
           <div className="grid-contact-links">
             <div>
-              <p style={{ fontSize: '0.65rem', color: '#AAA', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Contact</p>
-              <p style={{ fontSize: '0.95rem', marginBottom: '8px' }}>WhatsApp: 0762732827</p>
-              <a href="mailto:chanulawijayarathne@gmail.com" style={{ color: '#1a1a1a', textDecoration: 'none', borderBottom: '1px solid #CCC', fontSize: '0.95rem' }}>Email Me</a>
+              <p className="contact-section-label">Contact</p>
+              <div className="contact-link-row">
+                <span className="contact-icon"><WhatsAppIcon /></span>
+                <p className="contact-text">WhatsApp: 0762732827</p>
+              </div>
+              <a href="mailto:chanulawijayarathne@gmail.com" className="contact-link email-link">
+                <span className="contact-icon"><MailIcon /></span>
+                <span>Email Me</span>
+              </a>
             </div>
             <div>
-              <p style={{ fontSize: '0.65rem', color: '#AAA', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Professional</p>
-              <a href="https://github.com/Chanulaw" target="_blank" rel="noreferrer" style={{ display: 'block', color: '#1a1a1a', textDecoration: 'none', marginBottom: '8px', fontSize: '0.95rem' }}>GitHub</a>
-              <a href="https://linkedin.com/in/chanula-wijayarathne" target="_blank" rel="noreferrer" style={{ display: 'block', color: '#1a1a1a', textDecoration: 'none', marginBottom: '8px', fontSize: '0.95rem' }}>LinkedIn</a>
-              <a href="https://facebook.com/chanula.wijayarathne" target="_blank" rel="noreferrer" style={{ display: 'block', color: '#1a1a1a', textDecoration: 'none', fontSize: '0.95rem' }}>Facebook</a>
+              <p className="contact-section-label">Professional</p>
+              <a href="https://github.com/Chanulaw" target="_blank" rel="noreferrer" className="contact-link">
+                <span className="contact-icon"><GitHubIcon /></span>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/chanula-wijayarathne" target="_blank" rel="noreferrer" className="contact-link">
+                <span className="contact-icon"><LinkedInIcon /></span>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://facebook.com/chanula.wijayarathne" target="_blank" rel="noreferrer" className="contact-link">
+                <span className="contact-icon"><FacebookIcon /></span>
+                <span>Facebook</span>
+              </a>
             </div>
             <div>
-              <p style={{ fontSize: '0.65rem', color: '#AAA', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Social</p>
-              <a href="https://instagram.com/chanuu.w" target="_blank" rel="noreferrer" style={{ color: '#1a1a1a', textDecoration: 'none', fontSize: '0.95rem' }}>Instagram</a>
+              <p className="contact-section-label">Social</p>
+              <a href="https://instagram.com/chanuu.w" target="_blank" rel="noreferrer" className="contact-link">
+                <span className="contact-icon"><InstagramIcon /></span>
+                <span>Instagram</span>
+              </a>
             </div>
           </div>
         </motion.div>
