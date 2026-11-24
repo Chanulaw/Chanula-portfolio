@@ -55,7 +55,8 @@ export const projects = [
       <path d="M112 160h90M112 205h90M112 250h58"/>
       <path d="M248 130h120v180H248"/>
       <path d="M278 180h60M278 220h60M278 260h38"/>
-    `)
+    `),
+    imageFit: "contain"
   },
   {
     id: 11,
@@ -69,7 +70,8 @@ export const projects = [
       <path d="M310 43h40v40"/>
       <circle cx="220" cy="84" r="30"/>
       <path d="M205 115l-20 35 40 20 24-37M200 135l-40 20 14 25 40-12"/>
-    `)
+    `),
+    imageFit: "contain"
   },
   {
     id: 12,
@@ -82,7 +84,8 @@ export const projects = [
       <path d="M220 80v110M165 135h110"/>
       <path d="M40 315h85l32-45 38 75 40-95 34 65h100"/>
       <circle cx="220" cy="135" r="78" stroke-opacity=".45"/>
-    `)
+    `),
+    imageFit: "contain"
   },
   {
     id: 7,
@@ -113,7 +116,8 @@ export const projects = [
       <path d="M155 165h2M255 165h2M145 220q65 55 130 0"/>
       <path d="M205 70V35M160 35h90"/>
       <circle cx="205" cy="20" r="14"/>
-    `)
+    `),
+    imageFit: "contain"
   },
   {
     id: 3,
@@ -126,7 +130,8 @@ export const projects = [
       <path d="M75 115l55-70h300l-55 70M130 45l-55 70M230 45l-55 70M330 45l-55 70M430 45l-55 70"/>
       <path d="M175 165l105 58-105 58z"/>
       <path d="M110 330v35M340 330v35"/>
-    `)
+    `),
+    imageFit: "contain"
   },
   {
     id: 4,
@@ -138,7 +143,8 @@ export const projects = [
       <path d="M45 215l145 28 115-133q18-20 42-15l18 4-78 164 93 47q18 9 18 29v15l-132-33-83 89-25-6 44-98-127-51z"/>
       <path d="M275 335l84 17"/>
       <path d="M65 95h105M65 130h70"/>
-    `)
+    `),
+    imageFit: "contain"
   },
   {
     id: 5,
@@ -152,7 +158,8 @@ export const projects = [
       <path d="M230 320V155M230 170l-65-42M230 170l65-50M230 170l-13-75M230 170l58 5"/>
       <path d="M165 128l-27-6M165 128l-6-28M295 120l14-25M295 120l27-4M217 95l-16-22M217 95l24-12M288 175l23-12"/>
       <path d="M85 355h290"/>
-    `)
+    `),
+    imageFit: "contain"
   },
   {
     id: 6,
