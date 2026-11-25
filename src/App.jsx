@@ -9,7 +9,6 @@ import noveraOpeningImage from './assets/novera-event-opening.jpg';
 import ieeeInterviewImage from './assets/ieee-xtreme-interview.jpg';
 import ieeeTeamImage from './assets/ieee-xtreme-team.jpg';
 import ieeeMediaImage from './assets/ieee-xtreme-media.jpg';
-import ieeeLeadershipImage from './assets/ieee-xtreme-leadership.jpg';
 import ieeeCompetitionImage from './assets/ieee-xtreme-competition.jpg';
 
 const awardData = {
@@ -54,7 +53,6 @@ const leadershipEvents = [
       { src: ieeeInterviewImage, alt: "Program leader speaking at IEEE Xtreme" },
       { src: ieeeTeamImage, alt: "IEEE Xtreme team reviewing event details" },
       { src: ieeeMediaImage, alt: "IEEE Xtreme event media coverage" },
-      { src: ieeeLeadershipImage, alt: "IEEE Xtreme program leader with team members" },
       { src: ieeeCompetitionImage, alt: "Participants taking part in IEEE Xtreme" },
     ],
     links: [
