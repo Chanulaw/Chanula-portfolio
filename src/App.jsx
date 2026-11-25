@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './Navbar';
 import myPhoto from './assets/me-full.png';
 import { projects } from './data.js';
+import noveraStageImage from './assets/novera-event-stage.jpg';
+import noveraAwardImage from './assets/novera-event-award.jpg';
+import noveraOpeningImage from './assets/novera-event-opening.jpg';
+import ieeeInterviewImage from './assets/ieee-xtreme-interview.jpg';
+import ieeeTeamImage from './assets/ieee-xtreme-team.jpg';
+import ieeeMediaImage from './assets/ieee-xtreme-media.jpg';
+import ieeeLeadershipImage from './assets/ieee-xtreme-leadership.jpg';
+import ieeeCompetitionImage from './assets/ieee-xtreme-competition.jpg';
 
 const awardData = {
   title: "The Duke of Edinburgh's International Award",
@@ -12,7 +20,50 @@ const awardData = {
 
 const engagements = [
   { year: "2019-Present", title: "Richmond Live", detail: "Strategic media production and digital event coordination for Richmond College." },
-  { year: "2026- Present", title: "AIESEC in CINEC", detail: "Business Development vice president focusing on corporate partnerships and high-impact growth." }
+  { year: "2026-Present", title: "AIESEC in CINEC", detail: "Business Development vice president focusing on corporate partnerships and high-impact growth." }
+];
+
+const leadershipEvents = [
+  {
+    role: 'Event Manager',
+    title: "Novera '26",
+    detail: "An AIESEC in CINEC event featuring a fashion show and workshop.",
+    images: [
+      { src: noveraStageImage, alt: "Novera event stage", objectPosition: 'center center' },
+      { src: noveraAwardImage, alt: "Novera event recognition on stage", objectPosition: 'center 18%' },
+      { src: noveraOpeningImage, alt: "Opening ceremony at Novera" },
+    ],
+    photoLinks: [
+      { label: 'Facebook post', href: 'https://www.facebook.com/share/p/1A7XjeWMaf/?mibextid=wwXIfr' },
+      { label: 'Facebook post', href: 'https://web.facebook.com/share/p/1UhVNhqci2/' },
+      { label: 'Facebook post', href: 'https://web.facebook.com/share/p/1FjnE2TV8t/' },
+    ],
+    videos: [
+      { label: 'Novera video 1', href: 'https://web.facebook.com/share/r/1CHwVQPiQf/' },
+      { label: 'Novera video 2', href: 'https://web.facebook.com/reel/1483973750298472/' },
+      { label: 'Novera video 3', href: 'https://web.facebook.com/share/r/14wHy4rMWkE/' },
+      { label: 'Novera video 4', href: 'https://web.facebook.com/reel/3271665519690753/' },
+      { label: 'Novera video 5', href: 'https://web.facebook.com/reel/3373415939524797/' },
+    ],
+  },
+  {
+    role: 'Program Leader',
+    title: 'IEEE Xtreme 20.0',
+    detail: 'Program Leader for the IEEE Student Branch at CINEC.',
+    images: [
+      { src: ieeeInterviewImage, alt: "Program leader speaking at IEEE Xtreme" },
+      { src: ieeeTeamImage, alt: "IEEE Xtreme team reviewing event details" },
+      { src: ieeeMediaImage, alt: "IEEE Xtreme event media coverage" },
+      { src: ieeeLeadershipImage, alt: "IEEE Xtreme program leader with team members" },
+      { src: ieeeCompetitionImage, alt: "Participants taking part in IEEE Xtreme" },
+    ],
+    links: [
+      { label: 'LinkedIn post', href: 'https://www.linkedin.com/posts/chanula-wijayarathne_ieeextreme-ieeextreme24-competitiveprogramming-activity-7526235814687686656-r5KT?utm_medium=ios_app&rcm=ACoAAEufka4BkUPcuhObaLOYUApGZnS8vqKN1V4&utm_source=social_share_send&utm_campaign=copy_link' },
+    ],
+    videos: [
+      { label: 'Facebook video', href: 'https://www.facebook.com/share/v/1DMjeTkXZ2/?mibextid=wwXIfr' },
+    ],
+  },
 ];
 
 const skills = [
@@ -29,6 +80,55 @@ const skills = [
   { name: "MySQL", icon: "https://skillicons.dev/icons?i=mysql" },
   { name: "Git", icon: "https://skillicons.dev/icons?i=git" }
 ];
+
+const profileModes = {
+  engineering: {
+    label: 'Engineering',
+    title: 'Software Engineer',
+    subtitle: 'Software Engineering Student at CINEC | Building reliable digital systems',
+    aboutLabel: 'Engineering Profile',
+    aboutTitle: 'Building systems that solve real problems',
+    aboutText: 'I design and build practical software systems across web, mobile, backend and AI. I focus on clean implementation, scalable architecture and solutions that work for real users.',
+    focus: 'Web Systems, Backend & AI',
+    currentRole: 'Software Engineering Student at CINEC',
+    projectIds: [12, 1, 4, 9, 3, 11, 10, 5, 6, 7, 2],
+  },
+  combined: {
+    label: 'Combined',
+    title: 'Engineer + Builder',
+    subtitle: 'Software Engineering Student at CINEC | Business Development VP at AIESEC in CINEC',
+    aboutLabel: 'Background / Profile',
+    aboutTitle: 'Architect of Digital Impact',
+    aboutText: 'I am a Software Engineering student at CINEC with a passion for building scalable, high-impact systems. As the Business Development vice president at AIESEC in CINEC, I bridge technical execution with professional strategy and take on event and program leadership roles.',
+    focus: 'Web Systems & Security',
+    currentRole: 'AIESEC BD VP · Event & Program Leader',
+    projectIds: [12, 11, 9, 1, 10, 4, 3, 7, 6, 5, 2],
+  },
+  business: {
+    label: 'Business',
+    title: 'Business Builder',
+    subtitle: 'Business Development VP at AIESEC in CINEC | Partnerships, campaigns & growth',
+    aboutLabel: 'Leadership Profile',
+    aboutTitle: 'Turning strategy into measurable impact',
+    aboutText: "I connect ideas, teams and organisations to create meaningful outcomes. As an Event Manager, I organized Novera '26, an AIESEC in CINEC fashion show and workshop. I also served as Program Leader for IEEE Xtreme 20.0 at the IEEE Student Branch, CINEC.",
+    focus: 'Business Development & Partnerships',
+    currentRole: "Event Manager · Program Leader",
+    projectIds: [11, 9, 10, 12, 1, 7, 6, 3, 5, 4, 2],
+  },
+};
+
+const profileProjectDescriptions = {
+  engineering: {
+    12: 'A Flutter and Dart platform that helps users locate essential medicines across hospitals and pharmacies.',
+    11: 'A JavaScript campaign tracker with member profiles, points and department leaderboards.',
+    1: 'A JavaScript and Node.js waste logistics platform for efficient collection and tracking workflows.',
+  },
+  business: {
+    9: 'A focused event website created to support communication, promotion and the audience experience for Novera.',
+    11: 'A campaign platform that improves performance visibility, team motivation and department competition.',
+    10: 'A peer knowledge marketplace designed to make sharing and discovering student-created notes easier.',
+  },
+};
 
 function WhatsAppIcon() {
   return (
@@ -80,10 +180,31 @@ function MailIcon() {
 
 function App() {
   const [activeSection, setActiveSection] = useState(null);
+  const [activeEventMedia, setActiveEventMedia] = useState({});
+  const [profileMode, setProfileMode] = useState(() => {
+    const urlMode = new URLSearchParams(window.location.search).get('view');
+    if (urlMode && profileModes[urlMode]) return urlMode;
+    const savedMode = window.localStorage.getItem('portfolio-profile');
+    return profileModes[savedMode] ? savedMode : 'combined';
+  });
+
+  useEffect(() => {
+    window.localStorage.setItem('portfolio-profile', profileMode);
+    const url = new URL(window.location.href);
+    url.searchParams.set('view', profileMode);
+    window.history.replaceState({}, '', url);
+  }, [profileMode]);
 
   const toggleSection = (section) => {
     setActiveSection(activeSection === section ? null : section);
   };
+
+  const activeProfile = profileModes[profileMode];
+  const orderedProjects = [...projects].sort((a, b) => {
+    const aIndex = activeProfile.projectIds.indexOf(a.id);
+    const bIndex = activeProfile.projectIds.indexOf(b.id);
+    return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+  });
 
   return (
     <div className="app-container">
@@ -106,10 +227,32 @@ function App() {
             <span className="hero-title-accent">Wijayarathne</span>
           </h1>
 
-          <p className="hero-subtitle">
-            Software Engineering Student at CINEC <br />
-            Business Development VP at AIESEC in cinec
-          </p>
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={profileMode}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.22 }}
+              className="hero-subtitle"
+            >
+              {activeProfile.subtitle}
+            </motion.p>
+          </AnimatePresence>
+
+          <div className="profile-switcher" role="group" aria-label="Choose portfolio profile">
+            {Object.entries(profileModes).map(([mode, content]) => (
+              <button
+                key={mode}
+                type="button"
+                className={`profile-switcher-button${profileMode === mode ? ' active' : ''}`}
+                aria-pressed={profileMode === mode}
+                onClick={() => setProfileMode(mode)}
+              >
+                {content.label}
+              </button>
+            ))}
+          </div>
 
           <div className="hero-cta-group">
             <a href="#projects" className="btn-primary">
@@ -144,23 +287,39 @@ function App() {
       <section id="about" className="section-padding-dark">
         <motion.div className="grid-about" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6 }}>
           <div>
-            <p style={{ letterSpacing: '4px', fontSize: '0.7rem', color: '#666', textTransform: 'uppercase', marginBottom: '20px' }}>Background / Profile</p>
-            <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, lineHeight: 1.2 }}>
-              Architect of <br /> Digital Impact
-            </h2>
+            <p style={{ letterSpacing: '4px', fontSize: '0.7rem', color: '#666', textTransform: 'uppercase', marginBottom: '20px' }}>{activeProfile.aboutLabel}</p>
+            <AnimatePresence mode="wait">
+              <motion.h2
+                key={profileMode}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, lineHeight: 1.2 }}
+              >
+                {activeProfile.aboutTitle}
+              </motion.h2>
+            </AnimatePresence>
           </div>
           <div style={{ alignSelf: 'center' }}>
-            <p style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', lineHeight: '1.8', color: '#BBB', fontWeight: 300 }}>
-              I am a Software Engineering student at CINEC with a passion for building scalable, high-impact systems. As the Business Development vice president at AIESEC in CINEC, I bridge technical execution with professional strategy.
-            </p>
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={`${profileMode}-about`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', lineHeight: '1.8', color: '#BBB', fontWeight: 300 }}
+              >
+                {activeProfile.aboutText}
+              </motion.p>
+            </AnimatePresence>
             <div style={{ display: 'flex', gap: '30px', marginTop: '40px', flexWrap: 'wrap' }}>
               <div>
                 <p style={{ fontSize: '0.7rem', color: '#666', letterSpacing: '2px', textTransform: 'uppercase' }}>Focus</p>
-                <p style={{ marginTop: '8px', fontSize: '1rem' }}>Web Systems & Security</p>
+                <p style={{ marginTop: '8px', fontSize: '1rem' }}>{activeProfile.focus}</p>
               </div>
               <div>
                 <p style={{ fontSize: '0.7rem', color: '#666', letterSpacing: '2px', textTransform: 'uppercase' }}>Current Role</p>
-                <p style={{ marginTop: '8px', fontSize: '1rem' }}>AIESEC BD vice president at CINEC</p>
+                <p style={{ marginTop: '8px', fontSize: '1rem' }}>{activeProfile.currentRole}</p>
               </div>
             </div>
 
@@ -200,6 +359,90 @@ function App() {
                   </div>
                 </div>
               ))}
+              {profileMode !== 'engineering' && (
+                <div className="leadership-events">
+                  <p className="leadership-events-eyebrow">Leadership in action</p>
+                  <h3 className="leadership-events-title">Events & Programs</h3>
+                  <div className="leadership-event-list">
+                    {leadershipEvents.map((event) => {
+                      const selectedMedia = activeEventMedia[event.title] || 'photos';
+
+                      return (
+                        <article className="leadership-event-card" key={event.title}>
+                          <div className="leadership-event-copy">
+                            <p className="leadership-event-role">{event.role}</p>
+                            <h4>{event.title}</h4>
+                            <p>{event.detail}</p>
+                            {event.links && (
+                              <div className="engagement-links">
+                                {event.links.map((link) => (
+                                  <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                                    {link.label} ↗
+                                  </a>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                          <div className="event-media">
+                            <div className="event-media-tabs" role="group" aria-label={`${event.title} media categories`}>
+                              <button
+                                type="button"
+                                className={`event-media-tab${selectedMedia === 'photos' ? ' active' : ''}`}
+                                aria-pressed={selectedMedia === 'photos'}
+                                onClick={() => setActiveEventMedia((current) => ({ ...current, [event.title]: 'photos' }))}
+                              >
+                                Photos
+                              </button>
+                              <button
+                                type="button"
+                                className={`event-media-tab${selectedMedia === 'videos' ? ' active' : ''}`}
+                                aria-pressed={selectedMedia === 'videos'}
+                                onClick={() => setActiveEventMedia((current) => ({ ...current, [event.title]: 'videos' }))}
+                              >
+                                Videos
+                              </button>
+                            </div>
+                            {selectedMedia === 'photos' ? (
+                              <div className="event-media-content" aria-label={`${event.title} photos`}>
+                                <div className={`event-gallery event-gallery-${event.images.length}`}>
+                                  {event.images.map((image) => (
+                                    <img
+                                      key={image.src}
+                                      src={image.src}
+                                      alt={image.alt}
+                                      loading="lazy"
+                                      style={{ objectPosition: image.objectPosition || 'center center' }}
+                                    />
+                                  ))}
+                                </div>
+                                {event.photoLinks && (
+                                  <div className="event-media-links">
+                                    {event.photoLinks.map((link, index) => (
+                                      <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                                        View Facebook post {index + 1} ↗
+                                      </a>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ) : (
+                              <div className="event-media-content event-video-list" aria-label={`${event.title} videos`}>
+                                {event.videos.map((video, index) => (
+                                  <a key={video.href} href={video.href} target="_blank" rel="noreferrer">
+                                    <span aria-hidden="true">▶</span>
+                                    {video.label || `Video ${index + 1}`}
+                                    <span aria-hidden="true">↗</span>
+                                  </a>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </article>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
@@ -212,7 +455,8 @@ function App() {
           <h2 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>Portfolio</h2>
         </motion.div>
         <div className="grid-projects">
-          {projects.map((p, i) => {
+          {orderedProjects.map((p, i) => {
+            const profileDescription = profileProjectDescriptions[profileMode]?.[p.id];
             const gradientBg = `linear-gradient(135deg, hsl(${i * 45}, 70%, 90%), hsl(${i * 45 + 30}, 70%, 95%))`;
             return (
               <motion.div key={p.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, delay: (i % 3) * 0.1 }} whileHover={{ y: -6 }} className="project-card">
@@ -221,7 +465,7 @@ function App() {
                 </div>
                 <span style={{ fontSize: '0.7rem', color: '#DDD' }}>0{i + 1} /</span>
                 <h3 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', margin: '16px 0' }}>{p.title}</h3>
-                <p style={{ color: '#777', lineHeight: '1.7', marginBottom: '24px', fontSize: '0.95rem', flexGrow: 1 }}>{p.description}</p>
+                <p style={{ color: '#777', lineHeight: '1.7', marginBottom: '24px', fontSize: '0.95rem', flexGrow: 1 }}>{profileDescription || p.description}</p>
                 <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
                   <span style={{ fontSize: '0.7rem', color: '#999', textTransform: 'uppercase' }}>{p.tech}</span>
                   <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>

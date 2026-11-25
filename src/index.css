@@ -172,6 +172,47 @@ body {
   flex-wrap: wrap;
 }
 
+.profile-switcher {
+  display: inline-flex;
+  gap: 4px;
+  margin-top: 28px;
+  padding: 5px;
+  border: 1px solid rgba(26, 26, 26, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.profile-switcher-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 9px 15px;
+  background: transparent;
+  color: #777;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.profile-switcher-button:hover {
+  color: #1a1a1a;
+}
+
+.profile-switcher-button.active {
+  background: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.profile-switcher-button:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 3px;
+}
+
 .btn-primary {
   padding: 14px 28px;
   background-color: #1a1a1a;
@@ -329,6 +370,14 @@ body {
 
   .hero-cta-group {
     justify-content: center;
+  }
+
+  .profile-switcher {
+    max-width: 100%;
+  }
+
+  .profile-switcher-button {
+    padding: 9px 12px;
   }
 
   .hero-photo-wrapper {
@@ -585,7 +634,200 @@ body {
   border-bottom: 1px solid #EEE;
 }
 
+.leadership-events {
+  max-width: 1000px;
+  margin: 72px auto 0;
+  text-align: left;
+}
+
+.leadership-events-eyebrow {
+  color: #777;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.leadership-events-title {
+  margin: 8px 0 28px;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.leadership-event-list {
+  display: grid;
+  gap: 24px;
+}
+
+.leadership-event-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background: #FFF;
+  border: 1px solid #EEE;
+  border-radius: 12px;
+}
+
+.leadership-event-copy {
+  align-self: center;
+}
+
+.leadership-event-role {
+  color: #777;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.leadership-event-copy h4 {
+  margin-top: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+}
+
+.leadership-event-copy > p:not(.leadership-event-role) {
+  margin-top: 8px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.event-media {
+  display: grid;
+  gap: 16px;
+}
+
+.event-media-tabs {
+  display: inline-flex;
+  justify-self: start;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #E8E8E8;
+  border-radius: 999px;
+  background: #F7F7F7;
+}
+
+.event-media-tab {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: transparent;
+  color: #666;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.event-media-tab.active {
+  background: #1a1a1a;
+  color: #FFF;
+}
+
+.event-media-tab:focus-visible,
+.event-media-links a:focus-visible,
+.event-video-list a:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 3px;
+}
+
+.event-media-content {
+  min-width: 0;
+}
+
+.event-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.event-gallery img {
+  display: block;
+  width: 100%;
+  grid-column: span 2;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #EEE;
+}
+
+.event-gallery-5 img:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.event-gallery-5 img:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.event-media-links,
+.event-video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.event-media-links a,
+.event-video-list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  background: #FAFAFA;
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.event-media-links a:hover,
+.event-video-list a:hover {
+  border-color: #CCC;
+  background: #F2F2F2;
+}
+
+.event-video-list {
+  margin-top: 0;
+}
+
+.event-video-list a span:last-child {
+  margin-left: auto;
+  color: #888;
+}
+
+.engagement-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.engagement-links a {
+  color: #1a1a1a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid #AAA;
+  padding-bottom: 3px;
+}
+
+.engagement-links a:hover {
+  border-color: #1a1a1a;
+}
+
 @media (max-width: 600px) {
+  .leadership-events {
+    margin-top: 48px;
+  }
+
+  .leadership-event-card {
+    padding: 18px;
+  }
+
   .recognition-header {
     gap: 30px;
   }
